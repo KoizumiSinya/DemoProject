@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relShopCart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:padding="@dimen/common_size_five">
+
+
+    <CheckBox
+        android:id="@+id/cbItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/common_size_five"
+        android:layout_toRightOf="@+id/cbItem" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imgIcon"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMedicineName"
+            style="@style/textview_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_size_five"
+            android:text="@string/medicineName" />
+
+        <TextView
+            android:id="@+id/tvMedicineInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:padding="@dimen/common_size_five"
+            android:text="@string/medicineInfo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvMedicinePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/common_size_five"
+                android:text="@string/price"
+                android:textColor="@color/colorIndianRed3"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMedicineInfo"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/common_size_ten"
+                android:layout_marginRight="@dimen/common_size_ten"
+                android:layout_toRightOf="@+id/tvMedicinePrice"
+                android:background="@drawable/shape_rectangle_red"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgCartCut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/common_size_ten"
+                    android:clickable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/main_shop_gm_jian" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorIndianRed3" />
+
+                <TextView
+                    android:id="@+id/tvGoodNum"
+                    style="@style/textview_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/common_size_five"
+                    android:layout_marginRight="@dimen/common_size_five"
+                    android:padding="@dimen/common_size_ten"
+                    android:text="1" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorIndianRed3" />
+
+                <ImageView
+                    android:id="@+id/imgCartAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/common_size_ten"
+                    android:clickable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/main_shop_gm_jia" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgCartDel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:scaleType="center"
+                android:src="@drawable/main_shop_sc" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

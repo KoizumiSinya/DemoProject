@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:attr="http://schemas.android.com/apk/studio.sinya.jp.demo_powerimageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <studio.sinya.jp.demo_powerimageview.widget.PowerImageView
+        android:id="@+id/power_image"
+        attr:auto_play="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/vs_dog"/>
+
+</RelativeLayout>

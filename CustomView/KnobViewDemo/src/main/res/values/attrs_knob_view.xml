@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="KnobView1">
+
+        <attr name="knob_mark_width" format="dimension"/>
+        <attr name="knob_mark_length" format="dimension"/>
+        <attr name="knob_mark_color" format="reference|color"/>
+
+        <attr name="knob_mark_selected_width" format="dimension"/>
+        <attr name="knob_mark_selected_length" format="dimension"/>
+        <attr name="knob_mark_selected_color" format="reference|color"/>
+
+        <attr name="knob_arc_width" format="dimension"/>
+        <attr name="knob_arc_color" format="reference|color"/>
+
+        <attr name="knob_title_text" format="string"/>
+        <attr name="knob_title_text_size" format="dimension"/>
+        <attr name="knob_title_text_color" format="reference|color"/>
+
+        <attr name="knob_center_text_size" format="dimension"/>
+        <attr name="knob_center_text_color" format="reference|color"/>
+
+        <attr name="knob_stress" format="boolean"/>
+        <attr name="knob_stress_step" format="integer"/>
+        <attr name="knob_angle_step" format="integer"/>
+
+        <attr name="knob_img" format="reference"/>
+        <attr name="knob_img_bg" format="reference"/>
+
+        <attr name="knob_min_degree" format="float"/>
+        <attr name="knob_max_degree" format="float"/>
+
+        <attr name="knob_value" format="integer"/>
+        <attr name="knob_min_value" format="integer"/>
+        <attr name="knob_max_value" format="integer"/>
+
+
+
+    </declare-styleable>
+</resources>

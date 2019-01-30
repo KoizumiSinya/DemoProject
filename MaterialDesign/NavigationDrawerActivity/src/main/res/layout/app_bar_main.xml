@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        5.0新特性之 CoordinatorLayout + AppBarLayout(向上滚动隐藏指定的View)
+        CoordinatorLayout是一个可以设置界面滑动的时候隐藏某个控件的新布局控件
+        ① 首先需要用CoordinatorLayout包住AppBarLayout。并且保证 CoordinatorLayout里面,需要放一个带有可滚动的View，
+        ② 要实现绑定滑动界面的时候隐藏的View,需要设置在AppBarLayout里面的View,
+        通过app:layout_scrollFlags属性来控制,滚动时候的表现.其中有4种Flag的类型
+            scroll 表示向下滚动时,这个View会被滚出屏幕范围直到隐藏.
+            enterAlways 表示向上滚动时,这个View会随着滚动手势出现,直到恢复原来的位置
+        ③ 可以滚动的View上设置属性 app:layout_behavior
+    -->
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="可以隐藏的部分"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#eee">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="悬浮Title"
+                android:textColor="#000000"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+        <!-- ToaalBar工具控件-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:visibility="gone"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+
+        <!--layout_scrollFlags属性 用来标记哪个组件是可以滑动的
+         1、scroll: 所有想滚动出屏幕的view都需要设置这个flag- 没有设置这个flag的view将被固定在屏幕顶部。
+         2、enterAlways: 这个flag让任意向下的滚动都会导致该view变为可见，启用快速“返回模式”。
+         3、enterAlwaysCollapsed: 当你的视图已经设置minHeight属性又使用此标志时，你的视图只能已最小高度进入，只有当滚动视图到达顶部时才扩大到完整高度。
+         4、exitUntilCollapsed: 滚动退出屏幕，最后折叠在顶端
+         -->
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@android:color/holo_green_dark"
+            app:tabSelectedTextColor="@android:color/holo_green_dark"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- 或者使用-->
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="wrap_content"/>
+
+    <!-- 主页布局-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+    <!-- 悬浮按钮 -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email"/>
+
+</android.support.design.widget.CoordinatorLayout>

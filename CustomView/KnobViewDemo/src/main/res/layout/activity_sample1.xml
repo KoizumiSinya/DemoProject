@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:context="jp.sinya.knobview.SampleActivity1">
+
+    <jp.sinya.knobview.widgets.KnobView1
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:knob_max_degree="45"
+        app:knob_max_value="31"
+        app:knob_min_degree="-135"
+        app:knob_min_value="0"
+        app:knob_value="6"/>
+</LinearLayout>
+

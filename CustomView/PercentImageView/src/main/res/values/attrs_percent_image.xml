@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PercentImageView">
+        <attr name="hb_percent_image_bg" format="reference"/>
+        <attr name="hb_percent_image" format="reference"/>
+        <attr name="hb_percent_image_select" format="reference"/>
+        <attr name="hb_percent_divider" format="reference"/>
+        <attr name="hb_percent" format="integer"/>
+        <attr name="hb_percent_padding" format="dimension"/>
+    </declare-styleable>
+</resources>

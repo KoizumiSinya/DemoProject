@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/t_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"/>
+
+    <jp.sinya.rangeseekbar.RangeSeekBar
+        android:id="@+id/rsb_1"
+        app:lineColorEdge="#EEE"
+        app:lineColorSelected="@drawable/color_bar"
+        android:layout_width="260dip"
+        android:layout_height="56dip"/>
+
+    <TextView
+        android:id="@+id/t_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dip"/>
+
+    <jp.sinya.rangeseekbar.RangeSeekBar
+        android:id="@+id/rsb_2"
+        android:layout_width="wrap_content"
+        android:layout_height="44dip"
+        app:cells="8"
+        app:max="20"
+        app:min="-20"/>
+
+    <Button
+        android:id="@+id/b_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="query result for -20 to 20"/>
+
+    <TextView
+        android:id="@+id/t_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"/>
+
+    <jp.sinya.rangeseekbar.RangeSeekBar
+        android:id="@+id/rsb_3"
+        android:layout_width="200dip"
+        android:layout_height="36dip"
+        app:cells="4"
+        app:lineColorEdge="#FF9797"
+        app:lineColorSelected="#FF5151"
+        app:max="4"
+        app:min="0"
+        app:reserve="1"/>
+
+    <TextView
+        android:id="@+id/t_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <jp.sinya.rangeseekbar.RangeSeekBar
+        android:id="@+id/rsb_4"
+        android:layout_width="160dip"
+        android:layout_height="50dip"
+        app:seekBarResId="@mipmap/icon_seekbar"/>
+</LinearLayout>

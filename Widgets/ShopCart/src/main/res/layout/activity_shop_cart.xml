@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.baitongshiji.hospital.activity.ShopCartActivity">
+
+
+    <LinearLayout
+        android:id="@+id/frameAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_cart_top1" />
+
+        <include layout="@layout/layout_cart_top2" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/framePay"
+        android:layout_below="@+id/frameAddress"
+        android:background="@android:color/white"
+        android:divider="#f0eff4"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" />
+
+    <FrameLayout
+        android:id="@+id/framePay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/layout_payment" />
+    </FrameLayout>
+</RelativeLayout>

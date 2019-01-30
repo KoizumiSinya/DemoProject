@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C64E3A"
+    android:gravity="center"
+    tools:context="jp.sinyta.textwheel.demo.DemoActivity">
+
+    <jp.sinyta.textwheel.demo.TimerWheel
+        android:id="@+id/activity_demo_wheel1"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:epvMaxShowNum="3"
+        app:epvRecycleMode="false"
+        app:epvTextColor="#FFFFFF"
+        app:epvTextMaxScale="2.0"
+        app:epvTextMinAlpha="0.35"
+        app:epvTextPadding="10dp"
+        app:epvTextSize="30sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingRight="5dp"
+        android:text="Min"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+
+    <jp.sinyta.textwheel.demo.TimerWheel
+        android:id="@+id/activity_demo_wheel2"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:epvMaxShowNum="3"
+        app:epvRecycleMode="false"
+        app:epvTextColor="#FFFFFF"
+        app:epvTextMaxScale="2.0"
+        app:epvTextMinAlpha="0.35"
+        app:epvTextPadding="10dp"
+        app:epvTextSize="30sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Sec"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+
+    <jp.sinya.arcseekbar.demo.ShaderSeekArc
+        android:id="@+id/seek_arc"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        app:arcWidthRate="0.2"
+        app:endAngle="45"
+        app:endColor="0xFFCC151C"
+        app:endValue="28"
+        app:lineColor="0xff33B5E5"
+        app:markColor="0xff33B5E5"
+        app:markSize="30"
+        app:progress="24"
+        app:progressTextColor="0xffFFBB33"
+        app:progressTextSize="35"
+        app:showMark="true"
+        app:showProgress="true"
+        app:startAngle="-225"
+        app:startColor="0xFFFFF314"
+        app:startValue="16" />
+
+</LinearLayout>

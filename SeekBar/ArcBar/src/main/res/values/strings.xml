@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ArcBar</string>
+
+    <string-array name="items">
+        <item>Simple Holo theme</item>
+        <item>Custom style</item>
+    </string-array>
+</resources>

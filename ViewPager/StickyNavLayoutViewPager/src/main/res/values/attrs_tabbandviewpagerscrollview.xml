@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TabBandViewPagerScrollView">
+        <!-- 指示器颜色 -->
+        <attr name="tabPagerIndicatorColor" format="color"/>
+        <!-- 指示器的高度-->
+        <attr name="tabPagerIndicatorHeight" format="dimension"/>
+        <!--底部分隔线颜色-->
+        <attr name="tabPagerUnderlineColor" format="color"/>
+        <!-- tabItem之间分隔线的颜色 -->
+        <attr name="tabPagerDividerColor" format="color"/>
+        <!-- 在视图的底部占位线的高度-->
+        <attr name="tabPagerUnderlineHeight" format="dimension"/>
+        <!-- 分隔线距离上下的padding-->
+        <attr name="tabPagerDividerPadding" format="dimension"/>
+        <!-- 如果设置为true，每个标签都给予同样的weight，默认为false-->
+        <attr name="tabPagerShouldExpand" format="boolean"/>
+        <!-- 如果为真，所有选项卡标题都是大写，默认为true-->
+        <attr name="tabPagerTextAllCaps" format="boolean"/>
+        <!-- 标签的文字大小-->
+        <attr name="tabPagerTextSize" format="dimension"/>
+        <!--标签的文字默认颜色 -->
+        <attr name="tabPagerTextColor" format="color"/>
+        <!-- 被选中标签的文字颜色-->
+        <attr name="tabPagerTextSelectedColor" format="color"/>
+        <!-- 指示器被选中时 标签的偏移量-->
+        <attr name="tabPagerIndicatorScrollOffset" format="dimension"/>
+        <!-- Item之间 左右padding-->
+        <attr name="tabPagerItemPaddingLeftRight" format="dimension"/>
+        <!-- Item的背景的背景-->
+        <attr name="tabPagerItemBackground" format="reference"/>
+        <!-- 文字与下方的padding-->
+        <attr name="tabPagerTextPaddingButtom" format="dimension"/>
+
+        <!-- tab样式：1 文本； 2 Icon； 3 Icon在左+ 文本在右； 4 Icon在上 + 文本在下-->
+        <attr name="tabPagerStyle">
+            <enum name="textStyle" value="1"></enum>
+            <enum name="iconStyle" value="2"></enum>
+            <enum name="iconLeftToTextStyle" value="3"></enum>
+            <enum name="iconAboveToTextStyle" value="4"></enum>
+        </attr>
+
+        <!-- 字体样式 0是普通字体，1是粗体-->
+        <attr name="tabPagerTextStyle">
+            <enum name="defaultText" value="0"></enum>
+            <enum name="boldText" value="1"></enum>
+        </attr>
+
+        <!-- tab的文本和Icon的间距-->
+        <attr name="tabPagerIconToTextPadding" format="dimension"/>
+        <!-- tab的图片宽度-->
+        <attr name="tabPagerIconWidth" format="dimension"/>
+        <!-- tab的图片高度-->
+        <attr name="tabPagerIconHeight" format="dimension"/>
+    </declare-styleable>
+</resources>

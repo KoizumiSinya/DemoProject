@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="light_blue">#6593cb</color>
+    <color name="blue_refresh_bg">#5FA0EA</color>
+    <color name="gray_refresh_bg">#F0EFF5</color>
+    <color name="gray_load_bg">#F0EFF5</color>
+    <color name="line_color">#bfbfbf</color>
+    <color name="line_space_color">#f0eff5</color>
+
+    <!--google风格刷新控件使用的颜色-->
+    <color name="pulltorefresh_blue2">#00b0ff</color>
+    <color name="pulltorefresh_red">#FFC93437</color>
+    <color name="pulltorefresh_blue">#FF375BF1</color>
+    <color name="pulltorefresh_yellow">#FFF7D23E</color>
+    <color name="pulltorefresh_green">#FF34A350</color>
+
+</resources>

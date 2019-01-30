@@ -1,0 +1,245 @@
+include ':Utils';
+
+//地图
+//include ':Map:BaiDu';
+//include ':Map:GaoDe';
+//include ':Map:LocationManager';
+
+//Http
+//include ':Http:Base';
+//include ':Http:DownLoadFile';
+//include ':Http:FrameWork';
+//include ':Http:FrameWork2';
+//include ':Http:Json Parse';
+//include ':Http:XML Parse';
+//include ':Http:SocketBase';
+//include ':Http:Volley';
+
+//Android 5.0新特性
+//include ':MaterialDesign:ScrollingActivity';
+//include ':MaterialDesign:NavigationDrawerActivity';
+//include ':MaterialDesign:ToolBarDemo';
+//include ':MaterialDesign:CoordinatorLayoutDemo';
+//include ':MaterialDesign:BehaviorDemo';
+
+//IPC
+//include ':AIDL:AIDLDemo1';//开发艺术这本书中的demo
+//include ':AIDL:AIDL Demo';
+
+//数据库
+//include ':DataBase:DbDemo1';
+
+//Android 组件
+//include ':Activity:FragmentActivity';
+//include ':Activity:SlideFinishActivity';
+//include ':Activity:SwipeFinishActivity';
+//include ':Activity:TransitionDemo';
+//include ':Activity:TransitionDemo2';
+
+//自定义控件
+//include ':CustomView:OnDrawDemo';
+//include ':CustomView:TitleView';
+//include ':CustomView:OnDraw MoveIcon';
+//include ':CustomView:ArcSeekBarDemo';
+//include ':CustomView:VolumeControlViewDemo';
+//include ':CustomView:KnobViewDemo';
+//include ':CustomView:ScaleRuleView';
+//include ':CustomView:SpeedBarDemo';
+//include ':CustomView:CircleSeekBarDemo';
+//include ':CustomView:CircleSeekBarDemo2';
+//include ':CustomView:CircleSeekBarDemo3';
+//include ':CustomView:CircleSeekBarDemo4';
+//include ':CustomView:CircleSeekBarDemo5';
+//include ':CustomView:CrollerLibrary';
+//include ':CustomView:CrollerDemo';
+//include ':CustomView:ArcScaleView';
+//include ':CustomView:MaskView';
+//include ':CustomView:lottery';
+//include ':CustomView:PercentImageView';
+//include ':CustomView:ClipImageView';
+//include ':CustomView:WaveLayoutDemo';
+
+
+//RecyclerView
+//include ':RecyclerView:RefreshRecyclerViewDemo';
+//include ':RecyclerView:RecyclerViewGalleryDemo';
+include ':RecyclerView:StickyRecyclerDemo1';
+
+//ListView
+//include ':ListView:DragLeftDelete';
+//include ':ListView:SlideLeftDelete';
+//include ':ListView:SpringListView&ScrollView';
+//include ':ListView:ExpandListView SwipeLayout';
+//include ':ListView:ListView StickyHeader';
+//include ':ListView:StickyListView Demo';
+//include ':ListView:StickyExpandListView Demo';
+//include ':ListView:StickyExpandListView Demo2';
+//include ':ListView:SwipeExpandListView Demo';
+//include ':ListView:CircleListViewDemo';
+//include ':ListView:CircleListView';
+//include ':ListView:ListFirstLoadDemo';
+
+//GridView
+//include ':GridView:PhotoWall';
+
+//ScrollView
+//include ':ScrollView:FallPhotoView';
+//include ':ScrollView:PullToDrawScrollView';
+
+//Wheel
+//include ':Wheel:TimeWheel';
+//include ':Wheel:SelectWheelView';
+//include ':Wheel:DateSpanSelectRecyclerView';
+//include ':Wheel:CommonSelectWheelDialog';
+//include ':Wheel:CircleWheelView';
+//include ':Wheel:TextWheelDemo';
+
+//Dialog
+//include ':Dialog:Menu';
+//include ':Dialog:IOS BottomDialog';
+
+//Drawer
+//include ':Drawer:DrawerLayoutDemo';
+//include ':Drawer:DrawerSlidingDemo';
+//include ':Drawer:DrawerLayoutQQDemo';
+
+
+//PopWindow
+//include ':PopUpWindow:PopWindow Menu';
+
+//ViewPager
+//include ':ViewPager:ViewPaper TabStrip';
+//include ':ViewPager:ViewPaper&Fragment';
+//include ':ViewPager:ViewPaper&View';
+//include ':ViewPager:StickyNavLayoutViewPager';
+//include ':ViewPager:StickyLayout Demo';
+//include ':ViewPager:GalleryViewPager';
+
+//Notifications
+//include ':Notifications:Notification';
+
+//WindowManager
+//include ':Window Manager:FloatWindow';
+
+//Button
+//include ':Button:IOS Style';
+//include ':Button:AnimMenuButtonDemo';
+
+//EditText
+//include 'EditText:EditTextInputType';
+//include 'EditText:FormatPhoneNumberEdit';
+
+//Progress
+//include ':Progress:ProgressBar';
+//include ':Progress:SeekBar';
+//include ':Progress:ProgressButton';
+
+//SeekBar
+//include ':SeekBar:ArcBar';
+//include ':SeekBar:RangeSeekBar';
+
+//Service
+//include ':Service:Service With Async DownTool Demo';
+//include ':Service:ServiceDemo';
+//include ':Service:ServiceAIDLDemo';
+//include ':Service:ServiceAIDLDemo2';
+
+//观察者模式
+//include ':Observer:Observer Demo';
+
+//下拉刷新
+//include ':PullToRefresh:RefreshFrameWork';
+//include ':PullToRefresh:PullRefreshLayout';
+//include ':PullToRefresh:PullRefreshLoadMore';
+//include ':PullToRefresh:AutoPullToRefreshAndPullLoadMore';
+
+//动画
+//include ':Animation:AnimationsStore';
+//include ':Animation:AnimationStudy';
+//include ':Animation:BezierStudy';
+//include ':Animation:PathStudy';
+//include ':Animation:SVGAnimationDemo';
+//include ':Animation:SVGAnimationDemo2';
+//include ':Animation:RotateAnimationDemo';
+//include ':Animation:SwipeBackDemo';
+//include ':Animation:AnimRecyclerViewDemo';
+//include ':Animation:ShareElementAnimationDemo';
+
+//蓝牙
+//include ':Bluetooth:BluetoothDemo';
+//include ':Bluetooth:BluetoothDemo2';
+
+//相机D
+//include 'Camera:CameraDemo1';
+
+//视频
+//include 'Video:VitamioLibrary';
+//include 'Video:VideoDemo1';
+//include 'Video:VideoDemo2';
+//include 'Video:VideoDemo3';
+
+//WIFI模块
+//include ':Wifi:WifiDemo1';
+
+//MediaRecord
+//include ':MediaRecord:MediaRecord Demo';
+//include ':MediaRecord:WeChatRecord Demo';
+
+//小控件 / 练习
+//include ':Widgets:Calculator';
+//include ':Widgets:Launcher';
+//include ':Widgets:Contacts AsyncQueryHandler';
+//include ':Widgets:ActionBar';
+//include ':Widgets:PowerImageView';
+//include ':Widgets:SlideMenuHome';
+//include ':Widgets:SlideMenuLayout';
+//include ':Widgets:SlidingAD';
+//include ':Widgets:SlidingDrawer';
+//include ':Widgets:SlidingMenuDelete';
+//include ':Widgets:SlidingPaneLayout';
+//include ':Widgets:TabHost';
+//include ':Widgets:ShopCart';
+
+//第三方框架/demo/工程
+//include ':Others:UniversalImageLoader';
+//include ':Others:FlyVoiceDemo';
+//include ':Others:Retrofit Demo';
+//include ':Others:Retrofit Demo2';
+//include ':Others:Retrofit Demo3';
+//include ':Others:EventBus Demo';
+//include ':Others:JPush Demo';
+//include ':Others:JPushExample';
+//include ':Others:Messenger Demo';
+//include ':Others:EditTextInputType';
+//include ':Others:ScrollTo Demo';
+//include ':Others:TouchView Demo';
+//include ':Others:TouchEvent Demo';
+//include ':Others:EventTouchDemo2';
+//include ':Others:Permission Demo';
+//include ':Others:DictionaryDemo';
+//include ':Others:ContactLocationDemo';
+//include ':Others:TallyBook';
+//include ':Others:BitmapDemo';
+//include ':Others:MrSimpleImageLoader';
+
+//热修复
+//include ':HotFix:MultiDexDemo1';
+//include ':HotFix:HofFixDemo2';
+
+//MVP
+//include ':MVP:GoogleAndroidArchitectureMVP';
+//include ':MVP:MVPTest';
+//include ':MVP:MVPDemo1';
+//include ':MVP:MVPDemo2';
+//include ':MVP:MVPDemo3';
+
+//RxJava
+//include ':RxJava:RxJava Demo1';
+
+//Dagger
+//include ':Dagger:Dagger2Demo';
+
+//Library
+//include ':Library:Animation';
+//include ':Library:SweetAlert';
+//include ':Library:Library_Refresh';

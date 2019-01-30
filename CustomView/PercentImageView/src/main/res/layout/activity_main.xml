@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <jp.sinya.demo.percentimageview.PercentImageView
+        android:id="@+id/img_percent"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        app:hb_percent="10"
+        app:hb_percent_divider="@drawable/hb_divider"
+        app:hb_percent_image="@drawable/hb_gray"
+        app:hb_percent_image_bg="@drawable/hb_bg"
+        app:hb_percent_image_select="@drawable/hb_yellow"
+        app:hb_percent_padding="11dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="click"
+        android:text="点击增加比例"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click2"
+        android:text="点击减小比例"/>
+
+    <TextView
+        android:id="@+id/tv_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"/>
+</android.support.v7.widget.LinearLayoutCompat>

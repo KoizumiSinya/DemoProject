@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/activity_main"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_image"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Image"/>
+
+    <Button
+        android:id="@+id/btn_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="RecycleView"/>
+
+    <Button
+        android:id="@+id/btn_fab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="FAB and Other View"/>
+
+    <Button
+        android:id="@+id/btn_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Fragment"/>
+
+    <Button
+        android:id="@+id/btn_intent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Intent"/>
+
+    <Button
+        android:id="@+id/btn_for_result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="startActivityForrRsult"
+        android:textAllCaps="false"/>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<com.example.demo_slidefinishactivity.widget.SlideFinishLayout
+    android:id="@+id/root_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/hello_world"/>
+
+    </RelativeLayout>
+</com.example.demo_slidefinishactivity.widget.SlideFinishLayout>

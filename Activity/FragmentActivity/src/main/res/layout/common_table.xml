@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_common_title"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+    <include
+        android:id="@+id/ll_tab_one"
+        layout="@layout/tab_three"
+        style="@style/comom_title_weight"/>
+
+    <include
+        android:id="@+id/ll_tab_two"
+        layout="@layout/tab_two"
+        style="@style/comom_title_weight"/>
+
+
+</LinearLayout>

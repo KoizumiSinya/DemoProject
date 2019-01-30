@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="lib_res_color_red">#FF0000</color>
+    <color name="lib_res_color_red_f14a4a">#F14A4A</color>
+    <color name="lib_res_color_red_da3439">#DA3439</color>
+    <color name="lib_res_color_red_start">#F67051</color>
+    <color name="lib_res_color_red_center">#F4604E</color>
+    <color name="lib_res_color_red_end">#F2534C</color>
+</resources>

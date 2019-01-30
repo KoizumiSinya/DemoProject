@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Demo_HttpFramwork2</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 网络异常等信息 -->
+    <string name="net_exception">网络或其他原因异常</string>
+    <string name="pointMessage">提示信息</string>
+    <string name="neterr_timeout">联网超时</string>
+    <string name="neterr_nullpt">服务器无数据返回</string>
+    <string name="neterr_refused">服务器拒绝请求</string>
+    <string name="neterr_response">服务器应答错误</string>
+    <string name="neterr_errorcode">网络异常,错误码:</string>
+    <string name="neterr_error">网络异常</string>
+    <string name="neterr_parse">数据解释错误</string>
+</resources>

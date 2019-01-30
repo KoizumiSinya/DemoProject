@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="loadView" type="id"/>
+    <item name="contentView" type="id"/>
+    <item name="errorView" type="id"/>
+    <item name="lceRefreshView" type="id"/>
+    <item name="lceRecyclerView" type="id"/>
+    <item name="lceSwipeLayout" type="id"/>
+
+</resources>

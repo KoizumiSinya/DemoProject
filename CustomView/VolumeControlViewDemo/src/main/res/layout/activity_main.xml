@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#FFFFFF"
+              android:gravity="center"
+              tools:context=".MainActivity">
+
+    <!--<jp.sinya.volumecontrolview.demo.TempControlView-->
+        <!--android:layout_width="350dp"-->
+        <!--android:layout_height="350dp"-->
+        <!--android:visibility="gone"/>-->
+
+    <jp.sinya.volumecontrolview.demo.VolumeControlView
+    android:layout_width="300dp"
+    android:layout_height="300dp"/>
+
+</LinearLayout>

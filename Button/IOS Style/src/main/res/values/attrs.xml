@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ToggleButton">
+        <attr name="on_resource" format="reference"></attr>
+        <attr name="off_resource" format="reference"></attr>
+        <attr name="btn_resource" format="reference"></attr>
+    </declare-styleable>
+</resources>

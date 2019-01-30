@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="pulltorefresh_red">#FFC93437</color>
+    <color name="pulltorefresh_blue">#FF375BF1</color>
+    <color name="pulltorefresh_yellow">#FFF7D23E</color>
+    <color name="pulltorefresh_green">#FF34A350</color>
+    <color name="theme_accent_1">#00b0ff</color>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@mipmap/loading_01"
+        android:duration="300"></item>
+    <item
+        android:drawable="@mipmap/loading_02"
+        android:duration="300"></item>
+    <item
+        android:drawable="@mipmap/loading_03"
+        android:duration="300"></item>
+    <item
+        android:drawable="@mipmap/loading_04"
+        android:duration="300"></item>
+    <item
+        android:drawable="@mipmap/loading_05"
+        android:duration="300"></item>
+    <item
+        android:drawable="@mipmap/loading_06"
+        android:duration="300"></item>
+    <item
+        android:drawable="@mipmap/loading_07"
+        android:duration="300"></item>
+
+    <!--
+    ①oneshot 表示否是只显示一次。如果是fasle，这个动画将无限循环
+    ②duration 表示毫秒值
+    -->
+</animation-list>

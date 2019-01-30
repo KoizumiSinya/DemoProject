@@ -1,0 +1,2 @@
+从github上下载的一个关于retrofit的demo
+里面还使用了okhttp 和 rxjave

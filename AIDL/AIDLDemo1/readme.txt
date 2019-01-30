@@ -1,0 +1,1 @@
+这个是 《android开发艺术》这本书的关于aidl 的知识点的demo

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/listView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <jp.sinya.stickylistviewdemo.PinnedHeaderListView
+        android:id="@+id/section_list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@null"/>
+</FrameLayout>

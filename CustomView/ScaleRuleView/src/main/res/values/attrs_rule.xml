@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScaleRulerView">
+        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_margin_top" format="dimension"/>
+
+        <attr name="line_color" format="color"/>
+        <attr name="line_space_width" format="dimension"/>
+        <attr name="line_width" format="dimension"/>
+        <attr name="line_max_height" format="dimension"/>
+        <attr name="line_mid_height" format="dimension"/>
+        <attr name="line_min_height" format="dimension"/>
+
+        <attr name="alpha_enable" format="boolean"/>
+        <attr name="min_value" format="float"/>
+        <attr name="max_value" format="float"/>
+        <attr name="value" format="float"/>
+        <attr name="pre_value" format="float"/>
+    </declare-styleable>
+</resources>

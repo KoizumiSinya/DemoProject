@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jp.sinya.test.arcbar.widget.SeekArc
+    android:id="@+id/seekArcBig"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    android:padding="30dp"
+    seekarc:arcColor="#40ffffff"
+    seekarc:arcWidth="2dp"
+    seekarc:progressColor="#3beb36"
+    seekarc:progressWidth="3dp"
+    seekarc:rotation="180"
+    seekarc:startAngle="30"
+    seekarc:sweepAngle="300"
+    seekarc:thumb="@mipmap/goal_charts_6"
+    seekarc:touchInside="true"/>

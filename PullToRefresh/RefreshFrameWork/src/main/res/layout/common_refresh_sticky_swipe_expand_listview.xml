@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".simple.activity.PullableSwipeListViewActivity">
+
+    <jp.sinya.refreshframework.pullableview.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/refresh_head"/>
+
+        <jp.sinya.refreshframework.pullableview.PullableStickySwipeExpandableListView
+            android:id="@+id/expandablelist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@null"
+            android:childDivider="@drawable/child_bg"
+            android:childIndicatorLeft="0dp"
+            android:divider="#BEBEBE"
+            android:dividerHeight="1dp"
+            android:groupIndicator="@null"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"/>
+
+        <include layout="@layout/load_more"/>
+    </jp.sinya.refreshframework.pullableview.PullToRefreshLayout>
+</RelativeLayout>

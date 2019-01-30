@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jp.sinya.refreshframework.pullableview.PullToRefreshLayout
+    android:id="@+id/refresh_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/refresh_head"/>
+
+    <jp.sinya.refreshframework.pullableview.PullableStickyExpandableListView
+        android:id="@+id/expandablelist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@null"
+        android:childDivider="@drawable/child_bg"
+        android:childIndicatorLeft="0dp"
+        android:divider="#BEBEBE"
+        android:dividerHeight="1dp"
+        android:groupIndicator="@null"
+        android:scrollbarAlwaysDrawHorizontalTrack="false">
+    </jp.sinya.refreshframework.pullableview.PullableStickyExpandableListView>
+
+    <include layout="@layout/load_more"/>
+</jp.sinya.refreshframework.pullableview.PullToRefreshLayout>

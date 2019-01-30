@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/activity_main_check1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="优惠卷1"/>
+
+    <CheckBox
+        android:id="@+id/activity_main_check2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="优惠卷2"/>
+
+    <CheckBox
+        android:id="@+id/activity_main_check3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="优惠卷3"/>
+
+    <CheckBox
+        android:id="@+id/activity_main_check4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="优惠卷4"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:onClick="open"
+        android:text="打开列表"/>
+</LinearLayout>

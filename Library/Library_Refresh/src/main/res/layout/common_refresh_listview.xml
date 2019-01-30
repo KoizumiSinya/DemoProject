@@ -1,0 +1,21 @@
+<jp.sinya.refreshlibrary.pullableview.PullToRefreshLayout
+    android:id="@+id/refresh_listview_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/refresh_head"/>
+    <!-- 支持所有实现Pullable接口的View -->
+
+    <jp.sinya.refreshlibrary.pullableview.PullableListView
+        android:id="@+id/refresh_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@null"
+        android:divider="@color/line_color"
+        android:dividerHeight="1dp"
+        android:listSelector="@android:color/transparent"/>
+
+    <include layout="@layout/refresh_load_more"/>
+
+</jp.sinya.refreshlibrary.pullableview.PullToRefreshLayout>

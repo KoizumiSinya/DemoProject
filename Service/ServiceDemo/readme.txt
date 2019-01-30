@@ -1,0 +1,2 @@
+简单的实现 通过Binder的方式，
+将注册绑定的service和activity沟通起来

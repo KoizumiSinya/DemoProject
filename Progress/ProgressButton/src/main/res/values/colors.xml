@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pb_blue">#3097fd</color>
+
+    <color name="mc_red">#FF0000</color>
+    <color name="mc_red_f14a4a">#F14A4A</color>
+    <color name="mc_red_da3439">#DA3439</color>
+    <color name="mc_red_start">#F67051</color>
+    <color name="mc_red_center">#F4604E</color>
+    <color name="mc_red_end">#F2534C</color>
+</resources>

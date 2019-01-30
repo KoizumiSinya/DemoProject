@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShopCart</string>
+    <string name="phoneNum">123342355323</string>
+    <string name="address">收货地址:北京市海淀区太平黄庄</string>
+    <string name="name">姓名</string>
+    <string name="medicineInfo">解热镇痛。用于感冒引起的头痛，发热，鼻噻，流涕，咽痛。</string>
+    <string name="medicineName">贵州百灵 维C银翘片</string>
+    <string name="price">￥%1$s</string>
+    <string name="total">合计:￥%1$s</string>
+</resources>

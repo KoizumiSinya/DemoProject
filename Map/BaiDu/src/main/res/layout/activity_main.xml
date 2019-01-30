@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_Info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" >
+    </TextView>
+
+    <Button
+        android:id="@+id/btn1"
+        android:onClick="goMap"
+        android:text="普通地图(BaseMapActivity)"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:onClick="goMap"
+        android:text="地图(MapFragmentActivity)"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:onClick="goMap"
+        android:text="叠层地图(LayersMapActivity)"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:onClick="goMap"
+        android:text="同时显示多个地图(MultiMapFragmentActivity)"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn5"
+        android:onClick="goMap"
+        android:text="缩放,旋转,视角(ControlMapActivity)"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn6"
+        android:onClick="goMap"
+        android:text="操控地图的一些控件(MapUISettingActivity)"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn7"
+        android:onClick="goMap"
+        android:text="定位地图(LocationActivity)"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

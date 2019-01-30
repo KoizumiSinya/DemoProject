@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="56dp"
+        android:height="60dp"
+        android:viewportWidth="56"
+        android:viewportHeight="60">
+    <path
+        android:name="arc"
+        android:pathData="
+        M27.148,56.4125
+        L11.5415,56.4125
+        C7.3005,56.4125 3.8593,52.959 3.8593,48.7303
+        L3.8593,11.1175
+        C3.8593,6.8763 7.3136,3.4352 11.5415,3.4352
+        L27.4021,3.4352"
+        android:strokeWidth="3"
+        android:strokeColor="#4B4B4B"/>
+    <path
+        android:name="check"
+        android:fillColor="#F65A5C"
+        android:fillType="evenOdd"
+        android:pathData="M55.3896,28.7173L44.4942,17.8219C43.8215,17.1492 42.742,17.1492 42.0686,17.8219C41.3958,18.4952 41.3958,19.5748 42.0686,20.2476L50.0436,28.2225L15.2625,28.2225C14.3101,28.2225 13.548,28.984 13.548,29.9363C13.548,30.8887 14.3101,31.6506 15.2625,31.6506L50.0436,31.6506L42.0686,39.6257C41.3958,40.2984 41.3958,41.3779 42.0686,42.0506C42.3991,42.3811 42.8437,42.5584 43.2752,42.5584C43.7067,42.5584 44.1513,42.3935 44.4818,42.0506L55.3766,31.1552C56.0623,30.4702 56.0623,29.3776 55.3896,28.7173Z"
+        android:strokeWidth="1"
+        android:strokeColor="#00000000"/>
+</vector>

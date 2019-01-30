@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jp.sinya.refreshlibrary.googlerefresh.PullRefreshLayout
+    android:id="@+id/refresh_google_swipe_listview_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line_space_color">
+
+    <jp.sinya.refreshlibrary.swipelistview.SwipeMenuListView
+        android:id="@+id/refresh_google_swipe_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"/>
+</jp.sinya.refreshlibrary.googlerefresh.PullRefreshLayout>

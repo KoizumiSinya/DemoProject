@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Demo_PullRefreshLayout</string>
+
+    <integer-array name="google_colors">
+        <item>@color/pulltorefresh_red</item>
+        <item>@color/theme_accent_1</item>
+        <item>@color/pulltorefresh_yellow</item>
+        <item>@color/pulltorefresh_green</item>
+    </integer-array>b
+
+</resources>

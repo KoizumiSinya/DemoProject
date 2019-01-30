@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/tab1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <include layout="@layout/tab_one"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <include layout="@layout/tab_two"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <include layout="@layout/tab_three"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <include layout="@layout/tab_four"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab5"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <include layout="@layout/tab_five"></include>
+
+    </LinearLayout>
+</LinearLayout>

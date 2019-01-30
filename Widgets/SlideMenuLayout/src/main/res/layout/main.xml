@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sap_mobile_newapi.demo_slidemenulayout.widget.MySlidingLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:id="@+id/menu"
+        android:layout_width="270dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:background="#ddaa"
+        android:visibility="invisible">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Menu"
+            android:textColor="#000000"
+            android:textSize="28sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="320dp"
+        android:layout_height="fill_parent"
+        android:background="#999"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/menuBtn"
+            android:layout_width="wrap_content"
+            android:text="Menu Show"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/contentList"
+            android:layout_width="fill_parent"
+            android:cacheColorHint="#ffffff"
+            android:layout_height="fill_parent">
+        </ListView>
+    </LinearLayout>
+
+</sap_mobile_newapi.demo_slidemenulayout.widget.MySlidingLayout>
