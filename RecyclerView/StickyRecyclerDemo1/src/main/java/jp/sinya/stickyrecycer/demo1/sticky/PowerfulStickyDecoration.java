@@ -148,7 +148,7 @@ public class PowerfulStickyDecoration extends BaseStickyDecoration {
      * @return 组名
      */
     @Override
-    String getGroupName(int position) {
+    protected String getGroupName(int position) {
         if (mGroupListener != null) {
             return mGroupListener.getGroupName(position);
         } else {

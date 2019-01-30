@@ -21,51 +21,57 @@ import java.util.Map;
 import jp.sinya.stickyrecycer.demo1.BuildConfig;
 
 public abstract class BaseStickyDecoration extends RecyclerView.ItemDecoration {
-    // TODO: 2018/4/13 加载更新后闪动
-
     /**
      * group背景色，默认透明
      */
     @ColorInt
-    int mGroupBackground = Color.parseColor("#48BDFF");
+    protected int mGroupBackground = Color.parseColor("#48BDFF");
     /**
      * 悬浮栏高度
      */
-    int mGroupHeight = 120;
+    protected int mGroupHeight = 120;
     /**
      * 分割线颜色，默认灰色
      */
     @ColorInt
-    int mDivideColor = Color.parseColor("#CCCCCC");
+    protected int mDivideColor = Color.parseColor("#CCCCCC");
     /**
      * 分割线宽度
      */
-    int mDivideHeight = 0;
-
+    protected int mDivideHeight = 0;
     /**
      * RecyclerView头部数量
      * 最小为0
      */
-    int mHeaderCount;
+    protected int mHeaderCount;
 
-    Paint mDividePaint;
+    protected Paint mDividePaint;
     /**
      * 缓存分组第一个item的position
      */
     private SparseIntArray firstInGroupCash = new SparseIntArray(100);
-
-    protected OnGroupClickListener mOnGroupClickListener;
-
     /**
      * down事件在顶部悬浮栏中
      */
     private boolean mDownInHeader;
+
+    protected OnGroupClickListener mOnGroupClickListener;
+
+    /**
+     * 设置点击事件
+     *
+     * @param listener
+     */
+    protected void setOnGroupClickListener(OnGroupClickListener listener) {
+        this.mOnGroupClickListener = listener;
+    }
 
     /**
      * 记录每个头部和悬浮头部的坐标信息【用于点击事件】
      * 位置由子类添加
      */
     protected HashMap<Integer, ClickInfo> stickyHeaderPosArray = new HashMap<>();
+
     private GestureDetector gestureDetector;
     private GestureDetector.OnGestureListener gestureListener = new GestureDetector.OnGestureListener() {
         @Override
@@ -97,19 +103,9 @@ public abstract class BaseStickyDecoration extends RecyclerView.ItemDecoration {
         }
     };
 
-
     public BaseStickyDecoration() {
         mDividePaint = new Paint();
         mDividePaint.setColor(mDivideColor);
-    }
-
-    /**
-     * 设置点击事件
-     *
-     * @param listener
-     */
-    protected void setOnGroupClickListener(OnGroupClickListener listener) {
-        this.mOnGroupClickListener = listener;
     }
 
     /**
@@ -143,6 +139,7 @@ public abstract class BaseStickyDecoration extends RecyclerView.ItemDecoration {
 
     /**
      * 判断是不是组中的第一个位置
+     *
      * 根据前一个组名，判断当前是否为新的组
      * 当前为groupId为null时，则与上一个为同一组
      */
@@ -192,39 +189,6 @@ public abstract class BaseStickyDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
-    @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        super.getItemOffsets(outRect, view, parent, state);
-        int position = parent.getChildAdapterPosition(view);
-        RecyclerView.LayoutManager manager = parent.getLayoutManager();
-
-        if (manager instanceof GridLayoutManager) {
-            //网格布局
-            int spanCount = ((GridLayoutManager) manager).getSpanCount();
-            if (!isHeader(position)) {
-                if (isFirstLineInGroup(position, spanCount)) {
-                    //为悬浮view预留空间
-                    outRect.top = mGroupHeight;
-                } else {
-                    //为分割线预留空间
-                    outRect.top = mDivideHeight;
-                }
-            }
-        } else {
-            //其他的默认为线性布局
-            //只有是同一组的第一个才显示悬浮栏
-            if (!isHeader(position)) {
-                if (isFirstInGroup(position)) {
-                    //为悬浮view预留空间
-                    outRect.top = mGroupHeight;
-                } else {
-                    //为分割线预留空间
-                    outRect.top = mDivideHeight;
-                }
-            }
-        }
-    }
-
     /**
      * 得到当前分组第一个item的position
      *
@@ -269,6 +233,7 @@ public abstract class BaseStickyDecoration extends RecyclerView.ItemDecoration {
         int realPosition = position - mHeaderCount;
         if (realPosition < 0) {
             return true;
+
         } else {
             String curGroupName = getGroupName(realPosition);
             String nextGroupName;
@@ -292,50 +257,37 @@ public abstract class BaseStickyDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
-    /**
-     * 网格布局需要调用
-     *
-     * @param recyclerView      recyclerView
-     * @param gridLayoutManager gridLayoutManager
-     */
-    public void resetSpan(RecyclerView recyclerView, GridLayoutManager gridLayoutManager) {
-        if (recyclerView == null) {
-            throw new NullPointerException("recyclerView not allow null");
-        }
-        if (gridLayoutManager == null) {
-            throw new NullPointerException("gridLayoutManager not allow null");
-        }
-        final int spanCount = gridLayoutManager.getSpanCount();
-        //相当于weight
-        GridLayoutManager.SpanSizeLookup lookup = new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                int span;
-                int realPosition = position - mHeaderCount;
-                if (realPosition < 0) {
-                    //小于header数量
-                    span = spanCount;
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
+        int position = parent.getChildAdapterPosition(view);
+        RecyclerView.LayoutManager manager = parent.getLayoutManager();
+
+        if (manager instanceof GridLayoutManager) {
+            //网格布局
+            int spanCount = ((GridLayoutManager) manager).getSpanCount();
+            if (!isHeader(position)) {
+                if (isFirstLineInGroup(position, spanCount)) {
+                    //为悬浮view预留空间
+                    outRect.top = mGroupHeight;
                 } else {
-                    String curGroupId = getGroupName(position);
-                    String nextGroupId;
-                    try {
-                        //防止外面没判断，导致越界
-                        nextGroupId = getGroupName(position + 1);
-                    } catch (Exception e) {
-                        nextGroupId = curGroupId;
-                    }
-                    if (!TextUtils.equals(curGroupId, nextGroupId)) {
-                        //为本行的最后一个
-                        int posFirstInGroup = getFirstInGroupWithCash(position);
-                        span = spanCount - (position - posFirstInGroup) % spanCount;
-                    } else {
-                        span = 1;
-                    }
+                    //为分割线预留空间
+                    outRect.top = mDivideHeight;
                 }
-                return span;
             }
-        };
-        gridLayoutManager.setSpanSizeLookup(lookup);
+        } else {
+            //其他的默认为线性布局
+            //只有是同一组的第一个才显示悬浮栏
+            if (!isHeader(position)) {
+                if (isFirstInGroup(position)) {
+                    //为悬浮view预留空间
+                    outRect.top = mGroupHeight;
+                } else {
+                    //为分割线预留空间
+                    outRect.top = mDivideHeight;
+                }
+            }
+        }
     }
 
 
@@ -385,6 +337,52 @@ public abstract class BaseStickyDecoration extends RecyclerView.ItemDecoration {
                 }
             }
         }
+    }
+
+    /**
+     * 网格布局需要调用
+     *
+     * @param recyclerView      recyclerView
+     * @param gridLayoutManager gridLayoutManager
+     */
+    public void resetSpan(RecyclerView recyclerView, GridLayoutManager gridLayoutManager) {
+        if (recyclerView == null) {
+            throw new NullPointerException("recyclerView not allow null");
+        }
+        if (gridLayoutManager == null) {
+            throw new NullPointerException("gridLayoutManager not allow null");
+        }
+        final int spanCount = gridLayoutManager.getSpanCount();
+        //相当于weight
+        GridLayoutManager.SpanSizeLookup lookup = new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                int span;
+                int realPosition = position - mHeaderCount;
+                if (realPosition < 0) {
+                    //小于header数量
+                    span = spanCount;
+                } else {
+                    String curGroupId = getGroupName(position);
+                    String nextGroupId;
+                    try {
+                        //防止外面没判断，导致越界
+                        nextGroupId = getGroupName(position + 1);
+                    } catch (Exception e) {
+                        nextGroupId = curGroupId;
+                    }
+                    if (!TextUtils.equals(curGroupId, nextGroupId)) {
+                        //为本行的最后一个
+                        int posFirstInGroup = getFirstInGroupWithCash(position);
+                        span = spanCount - (position - posFirstInGroup) % spanCount;
+                    } else {
+                        span = 1;
+                    }
+                }
+                return span;
+            }
+        };
+        gridLayoutManager.setSpanSizeLookup(lookup);
     }
 
     /**

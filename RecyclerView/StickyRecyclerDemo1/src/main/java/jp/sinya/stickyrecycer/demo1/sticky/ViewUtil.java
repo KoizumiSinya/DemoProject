@@ -13,19 +13,20 @@ import java.util.List;
  * View工具类
  */
 
-public class ViewUtil {
+public final class ViewUtil {
 
     /**
-     * 获取带用id的子view
+     * 获取标记id的子view
      *
      * @param view
      */
     public static List<View> getChildViewWithId(View view) {
         List<View> list = new ArrayList<>();
-        if (null != view && view instanceof ViewGroup) {
+        if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             LinkedList<ViewGroup> queue = new LinkedList<>();
             queue.add(viewGroup);
+
             while (!queue.isEmpty()) {
                 ViewGroup current = queue.removeFirst();
                 for (int i = 0; i < current.getChildCount(); i++) {
