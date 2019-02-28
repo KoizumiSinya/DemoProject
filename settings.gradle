@@ -63,7 +63,7 @@ include ':Utils';
 //RecyclerView
 //include ':RecyclerView:RefreshRecyclerViewDemo';
 //include ':RecyclerView:RecyclerViewGalleryDemo';
-include ':RecyclerView:StickyRecyclerDemo1';
+//include ':RecyclerView:StickyRecyclerDemo1';
 
 //ListView
 //include ':ListView:DragLeftDelete';
@@ -199,6 +199,7 @@ include ':RecyclerView:StickyRecyclerDemo1';
 //include ':Widgets:SlidingPaneLayout';
 //include ':Widgets:TabHost';
 //include ':Widgets:ShopCart';
+include ':Widgets:MultipleCategoryView';
 
 //第三方框架/demo/工程
 //include ':Others:UniversalImageLoader';
