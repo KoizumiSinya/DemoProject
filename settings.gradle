@@ -157,7 +157,7 @@ include ':Utils';
 //include ':Animation:AnimationsStore';
 //include ':Animation:AnimationStudy';
 //include ':Animation:BezierStudy';
-//include ':Animation:PathStudy';
+include ':Animation:PathStudy';
 //include ':Animation:SVGAnimationDemo';
 //include ':Animation:SVGAnimationDemo2';
 //include ':Animation:RotateAnimationDemo';
@@ -199,7 +199,6 @@ include ':Utils';
 //include ':Widgets:SlidingPaneLayout';
 //include ':Widgets:TabHost';
 //include ':Widgets:ShopCart';
-include ':Widgets:MultipleCategoryView';
 
 //第三方框架/demo/工程
 //include ':Others:UniversalImageLoader';
