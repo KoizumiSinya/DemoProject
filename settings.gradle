@@ -171,6 +171,7 @@ include ':Animation:SVGAnimationDemo2';
 
 //相机D
 //include 'Camera:CameraDemo1';
+include 'Camera:CameraDemo2';
 
 //视频
 //include 'Video:VitamioLibrary';
