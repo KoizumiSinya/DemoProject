@@ -8,4 +8,10 @@
 
     <string name="picture">Picture</string>
     <string name="request_permission">This sample needs camera permission.</string>
+
+    <string name="admin_warning_descript">Your Device will be protected by Device Monitor</string>
+    <string name="monitor_receiver">Monitor Receiver</string>
+
+    <string name="start_camera">Start Camera</string>
+    <string name="stop_camera">Stop Camera</string>
 </resources>

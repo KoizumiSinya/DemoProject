@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Point;
@@ -52,6 +53,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -245,6 +247,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         @Override
         public void onImageAvailable(ImageReader reader) {
             mBackgroundHandler.post(new ImageSaver(reader.acquireNextImage(), mFile));
+
         }
 
     };
@@ -280,6 +283,8 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
      * Orientation of the camera sensor
      */
     private int mSensorOrientation;
+
+    private ImageView imgResult;
 
     /**
      * A {@link CameraCaptureSession.CaptureCallback} that handles events related to JPEG capture.
@@ -414,9 +419,11 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
+        imgResult = view.findViewById(R.id.img);
+
         view.findViewById(R.id.picture).setOnClickListener(this);
         view.findViewById(R.id.info).setOnClickListener(this);
-        mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+        mTextureView = view.findViewById(R.id.texture);
     }
 
     @Override
@@ -864,7 +871,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     /**
      * Saves a JPEG {@link Image} into the specified {@link File}.
      */
-    private static class ImageSaver implements Runnable {
+    private class ImageSaver implements Runnable {
 
         /**
          * The JPEG image
@@ -889,6 +896,14 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
             try {
                 output = new FileOutputStream(mFile);
                 output.write(bytes);
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Camera2BasicFragment.this.imgResult.setImageBitmap(BitmapFactory.decodeFile(mFile.getPath()));
+                    }
+                });
+
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -944,7 +959,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 }
             }).create();
         }
-
     }
 
     /**
