@@ -119,7 +119,8 @@ include ':Utils';
 //include ':Notifications:Notification';
 
 //WindowManager
-//include ':Window Manager:FloatWindow';
+//include ':WindowManager:FloatWindow';
+include ':WindowManager:SoundVisualDemo';
 
 //Button
 //include ':Button:IOS Style';

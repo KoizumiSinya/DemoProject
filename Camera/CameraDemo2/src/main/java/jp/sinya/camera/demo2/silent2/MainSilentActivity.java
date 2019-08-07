@@ -2,12 +2,17 @@ package jp.sinya.camera.demo2.silent2;
 
 import android.Manifest;
 import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -20,6 +25,33 @@ import jp.sinya.camera.demo2.R;
 
 public class MainSilentActivity extends AppCompatActivity {
 
+    private RunCamera cameraService;
+    private ImageView img;
+    private Button btn;
+    ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            cameraService = ((RunCamera.CameraBinder) service).getService();
+            cameraService.setImageCallback(new RunCamera.OnImageCallback() {
+                @Override
+                public void saved(String imgPath) {
+                    img.setImageBitmap(BitmapFactory.decodeFile(imgPath));
+                }
+            });
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            cameraService = null;
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(connection);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,18 +59,20 @@ public class MainSilentActivity extends AppCompatActivity {
 
         checkAndRequestPermissions();
 
-        final Button start_stop = findViewById(R.id.button);
+        Intent intent = new Intent(MainSilentActivity.this, RunCamera.class);
+        bindService(intent, connection, Context.BIND_AUTO_CREATE);
 
-        start_stop.setOnClickListener(new View.OnClickListener() {
-
+        img = findViewById(R.id.img);
+        btn = findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainSilentActivity.this, RunCamera.class);
-                if (isMyServiceRunning()) {
-                    stopService(intent);
-                    start_stop.setText(R.string.start_camera);
+                if (cameraService.isValid()) {
+                    cameraService.stop();
+                    btn.setText(R.string.start_camera);
+
                 } else {
-                    startService(intent);
-                    start_stop.setText(R.string.stop_camera);
+                    cameraService.start();
+                    btn.setText(R.string.stop_camera);
                 }
             }
         });

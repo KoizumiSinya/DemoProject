@@ -10,9 +10,11 @@ import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.TotalCaptureResult;
+import android.media.CamcorderProfile;
 import android.media.Image;
 import android.media.ImageReader;
 import android.media.MediaRecorder;
+import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -30,16 +32,22 @@ import java.util.Arrays;
 
 public class RunCamera extends Service {
     private static final String TAG = "Sinya";
+    private boolean isValid;
+    private OnImageCallback imageCallback;
 
-    public RunCamera() {
+    private final IBinder binder = new CameraBinder();
+
+    public boolean isValid() {
+        return isValid;
     }
 
+    private MediaRecorder mediaRecorder;
     private ImageReader mImageReader;
 
-    private MediaRecorder mediaRecorder;
     private final CameraCaptureSessionStateCallback cameraCaptureSessionStateCallback = new CameraCaptureSessionStateCallback();
     private final CameraDeviceStateCallback cameraDeviceStateCallback = new CameraDeviceStateCallback();
     private CameraDevice cameraDevice;
+
     private Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
@@ -51,13 +59,12 @@ public class RunCamera extends Service {
     public void onCreate() {
         super.onCreate();
         try {
-            // Use this to initialize the camera profile
-            setupCamera();
-        } catch (IOException e) {
+            //setupCamera();
+            initImageReader();
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        // Use this to start recording video
-        start();
     }
 
     @Override
@@ -71,21 +78,28 @@ public class RunCamera extends Service {
         return START_STICKY;
     }
 
+    public void setImageCallback(OnImageCallback imageCallback) {
+        this.imageCallback = imageCallback;
+    }
+
+    private void initImageReader() {
+        mImageReader = ImageReader.newInstance(720, 1280, ImageFormat.JPEG, /*maxImages*/2);
+    }
+
+
     public void setupCamera() throws IOException {
         try {
-            mImageReader = ImageReader.newInstance(720, 1280, ImageFormat.JPEG, /*maxImages*/2);
 
-//            mediaRecorder = new MediaRecorder();
-//            mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-//            mediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
-//            final String filename = "/storage/emulated/0/" + System.currentTimeMillis() + ".mp4";
-//
-//
-//            CamcorderProfile profile = CamcorderProfile.get(0, CamcorderProfile.QUALITY_HIGH);
-//            mediaRecorder.setOutputFile(filename);
-//            mediaRecorder.setOrientationHint(0);
-//            mediaRecorder.setProfile(profile);
-//            mediaRecorder.prepare();
+            mediaRecorder = new MediaRecorder();
+            mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
+            final String filename = "/storage/emulated/0/" + System.currentTimeMillis() + ".mp4";
+
+            CamcorderProfile profile = CamcorderProfile.get(0, CamcorderProfile.QUALITY_HIGH);
+            mediaRecorder.setOutputFile(filename);
+            mediaRecorder.setOrientationHint(0);
+            mediaRecorder.setProfile(profile);
+            mediaRecorder.prepare();
         } catch (Exception e) {
             Log.d(TAG, "start: exception" + e.getMessage());
             e.printStackTrace();
@@ -93,6 +107,8 @@ public class RunCamera extends Service {
     }
 
     public void start() {
+        isValid = true;
+
         // This allocates and starts all camera and recording proccesses
         Log.d(TAG, "start: ");
         CameraManager cameraManager = (CameraManager) this.getSystemService(Context.CAMERA_SERVICE);
@@ -106,18 +122,20 @@ public class RunCamera extends Service {
     }
 
     public void stop() {
-        // This stops and release all camera and recording proccesses
-        Log.d(TAG, "stop: ");
+        isValid = false;
+//
+//        // This stops and release all camera and recording proccesses
+//        Log.d(TAG, "stop: ");
 //        if (mediaRecorder != null) {
 //            mediaRecorder.stop();
 //            mediaRecorder.reset();
 //            mediaRecorder.release();
 //            mediaRecorder = null;
 //        }
-        if (mImageReader != null) {
-            mImageReader = null;
-        }
-        cameraDevice.close();
+//        if (mImageReader != null) {
+//            mImageReader.close();
+//        }
+//        cameraDevice.close();
     }
 
     // Callbacks used to init camera, and set some parameters
@@ -178,7 +196,6 @@ public class RunCamera extends Service {
             Log.d(TAG, "onConfigured: " + e.getMessage());
         }
     }
-
 
     private void saveImage(CameraCaptureSession session) {
         mImageReader.setOnImageAvailableListener(mOnImageAvailableListener, handler);
@@ -249,8 +266,7 @@ public class RunCamera extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return binder;
     }
 
     private class ImageSaver implements Runnable {
@@ -266,7 +282,7 @@ public class RunCamera extends Service {
 
         ImageSaver(Image image) {
             mImage = image;
-            mFile = new File("/storage/emulated/0/" + System.currentTimeMillis() + ".jpg");
+            mFile = new File("/storage/emulated/0/silent/" + System.currentTimeMillis() + ".jpg");
         }
 
         @Override
@@ -278,6 +294,11 @@ public class RunCamera extends Service {
             try {
                 output = new FileOutputStream(mFile);
                 output.write(bytes);
+
+                Log.i("Sinya", "Save one: " + mFile.getParent());
+                if (imageCallback != null) {
+                    imageCallback.saved(mFile.getParent());
+                }
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -292,7 +313,15 @@ public class RunCamera extends Service {
                 }
             }
         }
-
     }
 
+    public class CameraBinder extends Binder {
+        RunCamera getService() {
+            return RunCamera.this;
+        }
+    }
+
+    public interface OnImageCallback {
+        void saved(String imgPath);
+    }
 }
