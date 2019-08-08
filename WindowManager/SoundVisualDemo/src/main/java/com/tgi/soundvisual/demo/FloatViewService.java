@@ -93,8 +93,12 @@ public class FloatViewService extends Service {
         }
     }
 
-    public void onStartListening() {
+    public void onStartListeningStart() {
         voiceVisualBar.setType(VoiceVisualBar.TYPE_LISTENING_START);
+    }
+
+    public void onStartListening() {
+        voiceVisualBar.setType(VoiceVisualBar.TYPE_LISTENING);
     }
 
 

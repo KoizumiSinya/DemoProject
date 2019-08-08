@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         unbindService(serviceConnection);
     }
 
+    public void onStartListeningStart(View view) {
+        service.onStartListeningStart();
+    }
+
     public void onStartListening(View view) {
         service.onStartListening();
     }

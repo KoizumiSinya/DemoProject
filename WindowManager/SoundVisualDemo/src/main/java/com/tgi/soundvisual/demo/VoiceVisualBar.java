@@ -48,9 +48,6 @@ public class VoiceVisualBar extends View {
     private ValueAnimator animator;
 
     private int mViewWidth = 0;
-    private float[] position = new float[]{0f, 0.1f, 0.9f, 1.0f};
-    private int[] colors = new int[]{backgroundColor, backgroundColor, backgroundColor, backgroundColor};
-    private int[] colors2 = new int[]{backgroundColor, visualColor, backgroundColor, visualColor, backgroundColor, backgroundColor};
 
     public VoiceVisualBar(Context context) {
         super(context);
@@ -72,6 +69,9 @@ public class VoiceVisualBar extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         if (mViewWidth == 0) {
             mViewWidth = getWidth();
+
+            final float[] position = new float[]{0f, 0.5f, 1.0f};
+            final int[] colors = new int[]{backgroundColor, visualColor, backgroundColor};
 
             if (mViewWidth > 0) {
                 backgroundPaint = getPaint();
@@ -185,6 +185,7 @@ public class VoiceVisualBar extends View {
         animator.setFloatValues(0f, 0.19f);
         animator.setDuration(200);
         animator.setInterpolator(new LinearInterpolator());
+
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -200,18 +201,66 @@ public class VoiceVisualBar extends View {
     }
 
     private void onStartListeningAnimation() {
+
+        final float[] position = new float[]{0f, 0.49f, 0.51f, 1.0f};
+        final int[] colors = new int[]{backgroundColor, visualColor, visualColor, backgroundColor};
+
         animator = new ValueAnimator();
-        animator.setFloatValues(0f, 0.4f);
-        animator.setDuration(250);
+        animator.setFloatValues(0f, 0.19f);
+        animator.setDuration(200);
         animator.setInterpolator(new LinearInterpolator());
-        animator.setRepeatCount(100);
+        animator.setRepeatCount(10);
         animator.setRepeatMode(ValueAnimator.REVERSE);
+
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                onStartListeningAnimation2();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                position[1] = 0.1f + value;
-                position[2] = 0.9f - value;
+                position[1] = 0.49f - value;
+                position[2] = 0.51f + value;
+                backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
+                backgroundPaint.setShader(backgroundShader);
+                invalidate();
+            }
+        });
+        animator.start();
+    }
+
+    private void onStartListeningAnimation2() {
+
+        final float[] position = new float[]{0f, 0.3f, 0.7f, 1.0f};
+        final int[] colors = new int[]{backgroundColor, visualColor, visualColor, backgroundColor};
+
+        animator = new ValueAnimator();
+        animator.setFloatValues(0f, 0.3f);
+        animator.setDuration(400);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                position[1] = 0.3f - value;
+                position[2] = 0.7f + value;
                 backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
                 backgroundPaint.setShader(backgroundShader);
                 invalidate();
