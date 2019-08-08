@@ -1,5 +1,6 @@
 package com.tgi.soundvisual.demo;
 
+import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -23,6 +24,12 @@ import androidx.annotation.Nullable;
  * @date:
  */
 public class VoiceVisualBar extends View {
+    public static final int TYPE_LISTENING_START = 0;
+    public static final int TYPE_LISTENING = 1;
+    public static final int TYPE_THINKING = 2;
+    public static final int TYPE_SPEAKING = 3;
+    public static final int TYPE_OFF = 4;
+    private int type = TYPE_LISTENING_START;
 
     private int backgroundColor = Color.parseColor("#214CFB");
     private int visualColor = Color.parseColor("#05FEFE");
@@ -38,9 +45,12 @@ public class VoiceVisualBar extends View {
     private Matrix visualMatrix;
     private Matrix visualMatrix2;
 
+    private ValueAnimator animator;
+
     private int mViewWidth = 0;
     private float[] position = new float[]{0f, 0.1f, 0.9f, 1.0f};
-    private int[] colors = new int[]{backgroundColor, visualColor, visualColor, backgroundColor};
+    private int[] colors = new int[]{backgroundColor, backgroundColor, backgroundColor, backgroundColor};
+    private int[] colors2 = new int[]{backgroundColor, visualColor, backgroundColor, visualColor, backgroundColor, backgroundColor};
 
     public VoiceVisualBar(Context context) {
         super(context);
@@ -70,24 +80,7 @@ public class VoiceVisualBar extends View {
                 backgroundMatrix = new Matrix();
             }
 
-            ValueAnimator animator = new ValueAnimator();
-            animator.setFloatValues(0f, 0.3f);
-            animator.setDuration(250);
-            animator.setInterpolator(new LinearInterpolator());
-            animator.setRepeatCount(200);
-            animator.setRepeatMode(ValueAnimator.REVERSE);
-            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    float value = (float) animation.getAnimatedValue();
-                    position[1] = 0.1f + value;
-                    position[2] = 0.9f - value;
-                    backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
-                    backgroundPaint.setShader(backgroundShader);
-                    invalidate();
-                }
-            });
-            animator.start();
+            //setType(TYPE_LISTENING_START);
         }
     }
 
@@ -95,18 +88,148 @@ public class VoiceVisualBar extends View {
 
     }
 
+    public void onDestory() {
+        if (animator != null) {
+            animator.end();
+            animator = null;
+        }
+    }
+
+    public void setType(int type) {
+        this.type = type;
+
+        if (type == TYPE_LISTENING_START) {
+            onStartListeningStartAnimation();
+        } else if (type == TYPE_LISTENING) {
+            onStartListeningAnimation();
+        } else if (type == TYPE_THINKING) {
+            onStartThinkingAnimation();
+        } else if (type == TYPE_SPEAKING) {
+            onStartSpeakingAnimation();
+        } else if (type == TYPE_OFF) {
+            onStartOffAnimation();
+        }
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        drawRainbow(canvas);
+        drawLine(canvas);
     }
 
-    private void drawRainbow(Canvas canvas) {
+    private void drawLine(Canvas canvas) {
 
         backgroundMatrix.setTranslate(0, 0);
         backgroundShader.setLocalMatrix(backgroundMatrix);
 
         canvas.drawRect(new RectF(0, 0, getWidth(), getHeight()), backgroundPaint);
+    }
+
+    private void onStartListeningStartAnimation() {
+
+        final float[] position = new float[]{0f, 0.01f, 0.11f, 0.89f, 0.99f, 1.0f};
+        final int[] colors = new int[]{backgroundColor, visualColor, backgroundColor, backgroundColor, visualColor, backgroundColor};
+
+        animator = new ValueAnimator();
+        animator.setFloatValues(0f, 0.39f);
+        animator.setDuration(100);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.setRepeatMode(ValueAnimator.REVERSE);
+
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                onStartListeningStartAnimation2();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                position[1] = 0.01f + value;
+                position[2] = 0.11f + value;
+
+                position[3] = 0.89f - value;
+                position[4] = 0.99f - value;
+                backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
+                backgroundPaint.setShader(backgroundShader);
+
+                invalidate();
+            }
+        });
+        animator.start();
+    }
+
+    private void onStartListeningStartAnimation2() {
+
+        final float[] position = new float[]{0f, 0.39f, 0.45f, 0.55f, 0.61f, 1.0f};
+        final int[] colors = new int[]{backgroundColor, backgroundColor, visualColor, visualColor, backgroundColor, backgroundColor};
+
+        animator = new ValueAnimator();
+        animator.setFloatValues(0f, 0.19f);
+        animator.setDuration(200);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                position[1] = 0.39f - value;
+                position[4] = 0.61f + value;
+                backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
+                backgroundPaint.setShader(backgroundShader);
+                invalidate();
+            }
+        });
+        animator.start();
+    }
+
+    private void onStartListeningAnimation() {
+        animator = new ValueAnimator();
+        animator.setFloatValues(0f, 0.4f);
+        animator.setDuration(250);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.setRepeatCount(100);
+        animator.setRepeatMode(ValueAnimator.REVERSE);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                position[1] = 0.1f + value;
+                position[2] = 0.9f - value;
+                backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
+                backgroundPaint.setShader(backgroundShader);
+                invalidate();
+            }
+        });
+        animator.start();
+    }
+
+    private void onStartThinkingAnimation() {
+
+    }
+
+    private void onStartSpeakingAnimation() {
+
+    }
+
+    private void onStartOffAnimation() {
+
     }
 
     public Paint getPaint() {
@@ -123,4 +246,9 @@ public class VoiceVisualBar extends View {
         return paint;
     }
 
+    public void onStop() {
+        if (animator != null) {
+            animator.end();
+        }
+    }
 }

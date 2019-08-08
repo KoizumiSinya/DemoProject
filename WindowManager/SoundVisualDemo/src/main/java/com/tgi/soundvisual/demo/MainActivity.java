@@ -6,17 +6,18 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CurrentNavigateFloatViewService service;
+    private FloatViewService service;
     ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder binder) {
-            service = ((CurrentNavigateFloatViewService.MyBinder) binder).getService();
+            service = ((FloatViewService.MyBinder) binder).getService();
         }
 
         @Override
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (WindowPermissionCheck.checkPermission(this)) {
-            Intent intent = new Intent(MainActivity.this, CurrentNavigateFloatViewService.class);
+            Intent intent = new Intent(MainActivity.this, FloatViewService.class);
             bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
         }
     }
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbindService(serviceConnection);
+    }
+
+    public void onStartListening(View view) {
+        service.onStartListening();
     }
 
 }

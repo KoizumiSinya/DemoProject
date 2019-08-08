@@ -18,6 +18,7 @@
 
 
     <com.tgi.soundvisual.demo.VoiceVisualBar
+        android:id="@+id/layout_float_voice_bar"
         android:layout_width="match_parent"
         android:layout_height="7dp" />
 

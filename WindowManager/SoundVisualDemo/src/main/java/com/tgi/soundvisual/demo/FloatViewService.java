@@ -12,10 +12,11 @@ import android.view.LayoutInflater;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
-public class CurrentNavigateFloatViewService extends Service {
+public class FloatViewService extends Service {
 
     //定义浮动窗口布局
     private RelativeLayout layout;
+    private VoiceVisualBar voiceVisualBar;
     private WindowManager.LayoutParams wmParams;
     //创建浮动窗口设置布局参数的对象
     private WindowManager mWindowManager;
@@ -67,7 +68,7 @@ public class CurrentNavigateFloatViewService extends Service {
         LayoutInflater inflater = LayoutInflater.from(getApplication());
         //获取浮动窗口视图所在布局
         layout = (RelativeLayout) inflater.inflate(R.layout.layout_float, null);
-
+        voiceVisualBar = layout.findViewById(R.id.layout_float_voice_bar);
         //添加mFloatLayout
         mWindowManager.addView(layout, wmParams);
     }
@@ -76,7 +77,7 @@ public class CurrentNavigateFloatViewService extends Service {
     public void onDestroy() {
         super.onDestroy();
         if (layout != null) {
-            //移除悬浮窗口
+            voiceVisualBar.onStop();
             mWindowManager.removeView(layout);
         }
     }
@@ -87,9 +88,14 @@ public class CurrentNavigateFloatViewService extends Service {
     }
 
     public class MyBinder extends Binder {
-        CurrentNavigateFloatViewService getService() {
-            return CurrentNavigateFloatViewService.this;
+        FloatViewService getService() {
+            return FloatViewService.this;
         }
     }
+
+    public void onStartListening() {
+        voiceVisualBar.setType(VoiceVisualBar.TYPE_LISTENING_START);
+    }
+
 
 }
