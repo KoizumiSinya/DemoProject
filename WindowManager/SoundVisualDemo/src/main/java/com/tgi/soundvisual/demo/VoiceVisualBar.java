@@ -202,11 +202,11 @@ public class VoiceVisualBar extends View {
 
     private void onStartListeningAnimation() {
 
-        final float[] position = new float[]{0f, 0.49f, 0.51f, 1.0f};
+        final float[] position = new float[]{0f, 0.4999f, 0.5111f, 1.0f};
         final int[] colors = new int[]{backgroundColor, visualColor, visualColor, backgroundColor};
 
         animator = new ValueAnimator();
-        animator.setFloatValues(0f, 0.19f);
+        animator.setFloatValues(0f, 0.2999f);
         animator.setDuration(200);
         animator.setInterpolator(new LinearInterpolator());
         animator.setRepeatCount(10);
@@ -236,8 +236,8 @@ public class VoiceVisualBar extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                position[1] = 0.49f - value;
-                position[2] = 0.51f + value;
+                position[1] = 0.4999f - value;
+                position[2] = 0.5111f + value;
                 backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
                 backgroundPaint.setShader(backgroundShader);
                 invalidate();
@@ -248,19 +248,19 @@ public class VoiceVisualBar extends View {
 
     private void onStartListeningAnimation2() {
 
-        final float[] position = new float[]{0f, 0.3f, 0.7f, 1.0f};
+        final float[] position = new float[]{0f, 0.25f, 0.75f, 1.0f};
         final int[] colors = new int[]{backgroundColor, visualColor, visualColor, backgroundColor};
 
         animator = new ValueAnimator();
-        animator.setFloatValues(0f, 0.3f);
+        animator.setFloatValues(0f, 0.25f);
         animator.setDuration(400);
         animator.setInterpolator(new LinearInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                position[1] = 0.3f - value;
-                position[2] = 0.7f + value;
+                position[1] = 0.25f - value;
+                position[2] = 0.75f + value;
                 backgroundShader = new LinearGradient(0, 0, getMeasuredWidth(), getHeight(), colors, position, Shader.TileMode.CLAMP);
                 backgroundPaint.setShader(backgroundShader);
                 invalidate();
