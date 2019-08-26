@@ -28,6 +28,7 @@ include ':Utils';
 
 //数据库
 //include ':DataBase:DbDemo1';
+include ':DataBase:DatabaseDemo2';
 
 //Android 组件
 //include ':Activity:FragmentActivity';

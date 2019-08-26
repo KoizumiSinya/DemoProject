@@ -15,6 +15,9 @@ buildscript {
         // in the individual module build.gradle files
         //dagger2的配置
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+
+        //greenDao配置
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
     }
 }
 
