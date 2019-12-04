@@ -143,10 +143,10 @@ public class MainActivity extends MvpActivity_13<LoginView_13, LoginPresenter_13
 
 
     //    第八步：MVP实现->优化->优化第6步->BaseActivity中抽象->
-//    抽象实现（BasePresneter和BaseView）
+//    抽象实现（BasePresenter和BaseView）
 //    分析问题：父类BaseActivity写死了，还是没有满足要求？
 //    只能够用LoginPresenter_6，然而我们的目的是能够兼容所有的模块
-//    解决方案：抽象实现（BasePresneter和BaseView）
+//    解决方案：抽象实现（BasePresenter和BaseView）
 //    private void loginServer() {
 //        LoginPresenter_7 loginPresenter = (LoginPresenter_7) getPresenter();
 //        loginPresenter.login("Dream", "123456");

@@ -7,23 +7,28 @@ buildscript {
             url 'https://maven.google.com/'
             name 'Google'
         }
-        google()
+        google() // Google's Maven repository
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.android.tools.build:gradle:3.5.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
         //dagger2的配置
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
 
         //greenDao配置
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+
+        //firebase需要使用的services
+        classpath 'com.google.gms:google-services:4.3.2'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        google()  // Google's Maven repository
         maven {
             url 'https://maven.google.com/'
             name 'Google'

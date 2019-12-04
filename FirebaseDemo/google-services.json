@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "769725011119",
+    "firebase_url": "https://sinya-firebase-demo-id.firebaseio.com",
+    "project_id": "sinya-firebase-demo-id",
+    "storage_bucket": "sinya-firebase-demo-id.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769725011119:android:d87d3b98c902e2bc8a305a",
+        "android_client_info": {
+          "package_name": "jp.sinya.firebase.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769725011119-pgp2rippdbp6nm5tm53793kefpnv6d9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrx6jR3fQtqLWvd91yvuyISUsL8EVd6jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769725011119-pgp2rippdbp6nm5tm53793kefpnv6d9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

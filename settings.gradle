@@ -231,10 +231,11 @@ include 'Camera:CameraDemo2';
 
 //MVP
 //include ':MVP:GoogleAndroidArchitectureMVP';
-//include ':MVP:MVPTest';
-//include ':MVP:MVPDemo1';
-//include ':MVP:MVPDemo2';
-//include ':MVP:MVPDemo3';
+include ':MVP:MVPTest';
+include ':MVP:MVPDemo1';
+include ':MVP:MVPDemo2';
+include ':MVP:MVPDemo3';
+include ':FirebaseDemo';
 
 //RxJava
 //include ':RxJava:RxJava Demo1';
