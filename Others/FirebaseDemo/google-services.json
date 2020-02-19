@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "878385159857",
+    "firebase_url": "https://tecpal-dev.firebaseio.com",
+    "project_id": "tecpal-dev",
+    "storage_bucket": "tecpal-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878385159857:android:b4b17757a306b150",
+        "android_client_info": {
+          "package_name": "com.tgi.myquickdemos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878385159857-c18f6n8vnuk9aki8r8p3du9iqk8k1b6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWGj3q6q6y1Sya7MPyn4YdXtVsOiKl8sE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878385159857-9ns2g71kandrlfd59kckbssl96967unf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878385159857:android:0f4a01b4d553b3f7934c90",
+        "android_client_info": {
+          "package_name": "jp.sinya.firebase.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878385159857-c18f6n8vnuk9aki8r8p3du9iqk8k1b6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWGj3q6q6y1Sya7MPyn4YdXtVsOiKl8sE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878385159857-9ns2g71kandrlfd59kckbssl96967unf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

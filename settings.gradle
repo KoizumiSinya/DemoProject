@@ -28,7 +28,7 @@ include ':Utils';
 
 //数据库
 //include ':DataBase:DbDemo1';
-include ':DataBase:DatabaseDemo2';
+//include ':DataBase:DatabaseDemo2';
 
 //Android 组件
 //include ':Activity:FragmentActivity';
@@ -121,7 +121,7 @@ include ':DataBase:DatabaseDemo2';
 
 //WindowManager
 //include ':WindowManager:FloatWindow';
-include ':WindowManager:SoundVisualDemo';
+//include ':WindowManager:SoundVisualDemo';
 
 //Button
 //include ':Button:IOS Style';
@@ -159,9 +159,9 @@ include ':WindowManager:SoundVisualDemo';
 //include ':Animation:AnimationsStore';
 //include ':Animation:AnimationStudy';
 //include ':Animation:BezierStudy';
-include ':Animation:PathStudy';
-include ':Animation:SVGAnimationDemo';
-include ':Animation:SVGAnimationDemo2';
+//include ':Animation:PathStudy';
+//include ':Animation:SVGAnimationDemo';
+//include ':Animation:SVGAnimationDemo2';
 //include ':Animation:RotateAnimationDemo';
 //include ':Animation:SwipeBackDemo';
 //include ':Animation:AnimRecyclerViewDemo';
@@ -173,7 +173,7 @@ include ':Animation:SVGAnimationDemo2';
 
 //相机D
 //include 'Camera:CameraDemo1';
-include 'Camera:CameraDemo2';
+//include 'Camera:CameraDemo2';
 
 //视频
 //include 'Video:VitamioLibrary';
@@ -224,6 +224,7 @@ include 'Camera:CameraDemo2';
 //include ':Others:TallyBook';
 //include ':Others:BitmapDemo';
 //include ':Others:MrSimpleImageLoader';
+//include ':Others:FirebaseDemo';
 
 //热修复
 //include ':HotFix:MultiDexDemo1';
@@ -231,11 +232,15 @@ include 'Camera:CameraDemo2';
 
 //MVP
 //include ':MVP:GoogleAndroidArchitectureMVP';
-include ':MVP:MVPTest';
-include ':MVP:MVPDemo1';
-include ':MVP:MVPDemo2';
-include ':MVP:MVPDemo3';
-include ':FirebaseDemo';
+//include ':MVP:MVPTest';
+//include ':MVP:MVPDemo1';
+//include ':MVP:MVPDemo2';
+//include ':MVP:MVPDemo3';
+
+
+//MVVM
+include ':MVVM:MVVMDemo1';
+
 
 //RxJava
 //include ':RxJava:RxJava Demo1';
