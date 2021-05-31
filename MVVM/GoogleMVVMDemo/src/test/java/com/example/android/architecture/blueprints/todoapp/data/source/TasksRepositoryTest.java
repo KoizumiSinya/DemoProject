@@ -16,8 +16,6 @@
 
 package com.example.android.architecture.blueprints.todoapp.data.source;
 
-import android.content.Context;
-
 import com.example.android.architecture.blueprints.todoapp.data.Task;
 import com.google.common.collect.Lists;
 

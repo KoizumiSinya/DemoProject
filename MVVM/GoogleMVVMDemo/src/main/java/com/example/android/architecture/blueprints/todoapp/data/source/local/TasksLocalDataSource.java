@@ -16,8 +16,6 @@
 
 package com.example.android.architecture.blueprints.todoapp.data.source.local;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 
@@ -26,6 +24,8 @@ import com.example.android.architecture.blueprints.todoapp.data.source.TasksData
 import com.example.android.architecture.blueprints.todoapp.util.AppExecutors;
 
 import java.util.List;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 
 /**

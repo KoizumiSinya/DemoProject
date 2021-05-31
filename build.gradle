@@ -8,6 +8,8 @@ buildscript {
             name 'Google'
         }
         google() // Google's Maven repository
+
+        mavenCentral() // protobuf
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
@@ -22,6 +24,9 @@ buildscript {
 
         //firebase需要使用的services
         classpath 'com.google.gms:google-services:4.3.2'
+
+        //gRPC protobuf
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.6'
     }
 }
 

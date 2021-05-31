@@ -1,3 +1,4 @@
+include ':gRPCDemo'
 include ':Utils';
 
 //地图
@@ -184,6 +185,9 @@ include ':Utils';
 //WIFI模块
 //include ':Wifi:WifiDemo1';
 
+//Battery
+//include ':Battery:BatteryDemo1';
+
 //MediaRecord
 //include ':MediaRecord:MediaRecord Demo';
 //include ':MediaRecord:WeChatRecord Demo';
@@ -225,6 +229,7 @@ include ':Utils';
 //include ':Others:BitmapDemo';
 //include ':Others:MrSimpleImageLoader';
 //include ':Others:FirebaseDemo';
+//include ':Others:LottieDemo';
 
 //热修复
 //include ':HotFix:MultiDexDemo1';
@@ -239,7 +244,7 @@ include ':Utils';
 
 
 //MVVM
-include ':MVVM:MVVMDemo1';
+//include ':MVVM:MVVMDemo1';
 
 
 //RxJava
