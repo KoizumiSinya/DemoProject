@@ -45,3 +45,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//ext {
+//    File file = new File("gRPCDemo/build/extracted-include-protos/main")//路径看你自己文件目录喽
+//    if (!file.exists()) {
+//        file.mkdirs()
+//    }
+Ca

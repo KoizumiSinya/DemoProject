@@ -49,7 +49,7 @@ android {
         plugins {
             grpc {
                 // Grpc单独的编译器
-                artifact = 'io.grpc:protoc-gen-grpc-java:1.33.0'
+                artifact = 'io.grpc:protoc-gen-grpc-java:1.38.0'
             }
 
             javalite {
@@ -81,9 +81,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation 'io.grpc:grpc-okhttp:1.33.0'
-    implementation 'io.grpc:grpc-protobuf-lite:1.33.0'
-    implementation 'io.grpc:grpc-stub:1.33.0'
+    implementation 'io.grpc:grpc-okhttp:1.38.0'
+    implementation 'io.grpc:grpc-protobuf-lite:1.38.0'
+    implementation 'io.grpc:grpc-stub:1.38.0'
+    implementation 'org.apache.tomcat:annotations-api:6.0.53'
+
     implementation 'com.google.protobuf:protobuf-java:3.5.1'
     implementation 'com.google.protobuf:protoc:3.5.1-1'
+
+    
+
 }
